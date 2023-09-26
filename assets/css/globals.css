@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.row {
+    @apply flex justify-center items-center;
+}
+
+.row-h {
+    @apply flex justify-center;
+}
+
+.row-v {
+    @apply flex items-center;
+}
+
+.row-end {
+    @apply flex justify-end;
+}
+
+.col-v {
+    @apply flex justify-center flex-col;
+}
+
+.col-h {
+    @apply flex items-center flex-col;
+}
+
+.inline-h {
+    @apply inline-flex justify-center;
+}
+
+.pointer {
+    @apply cursor-pointer;
+}
+
+.bg-main {
+    background-color: #332532;
+}
+
+.u {
+    @apply uppercase;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.error {
+    @apply text-red-600;
+}
+
+/* Triggering password margin for password element */
+.mt-2-i {
+    margin-top: 2 !important;
+}
