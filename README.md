@@ -5,6 +5,7 @@
 - Vue - progressive JavaScript framework for building user interfaces. It's incrementally adoptable, meaning you can use as much or as little of it as you need.
 - Nuxt.js - framework built on top of Vue.js that simplifies server-side rendering (SSR), static site generation (SSG), and routing for Vue applications.
 - [Tailwind CSS](https://tailwindcss.com/docs) - utility-first CSS framework that provides a set of pre-designed, highly composable utility classes.
+- Pinia - state management library designed for Vue.js applications. It is a more modern and modular alternative to Vuex, Vue's built-in state management solution.
 
 ## Getting Started
 
