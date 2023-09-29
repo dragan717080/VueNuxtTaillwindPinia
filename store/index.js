@@ -7,11 +7,12 @@ function waitForWindow() {
   return new Promise((resolve) => {
     if (typeof window !== 'undefined') {
       resolve(window);
-    } else {
-      // Listen for the window.onload event
-      window.onload = () => {
-        resolve(window);
+    } else if (typeof globalThis !== 'undefined') {
+      globalThis.onload = () => {
+        resolve(globalThis);
       };
+    } else {
+      resolve(null);
     }
   });
 }

@@ -5,7 +5,7 @@
         :src="require('~/assets/img/logo/logo-full-t-blue.png')"
         href="./"
         class="w-40 xl:w-44 mx-auto"
-        alt="DataWizard Logo"
+        alt="AlertBird Logo"
       />
       <h2 v-if="variant === 'REGISTER'" class="mt-6 text-center text-3xl semibold tracking-tight text-gray-900">
         Sign up

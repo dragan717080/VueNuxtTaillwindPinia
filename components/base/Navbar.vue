@@ -9,7 +9,7 @@
                 :src="require('~/assets/img/logo/logo-full-t-blue.png')"
                 href="./"
                 class="w-40 xl:w-44"
-                alt="DataWizard Logo"
+                alt="AlertBird Logo"
               />
             </div>
           </a>
@@ -94,33 +94,47 @@
               </ul>
             </transition>
           </li>
-          <li class="w-full lg:hidden">
-            <a
-              href="/auth"
-              class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#0cd3ff] hover:text-[#0c66ee] focus:outline-none focus:shadow-outline"
-              >Sign Up</a
-            >
-          </li>
+          <client-only>
+            <li class="w-full lg:hidden">
+              <a
+                v-if="!isLoggedIn"
+                href="/auth"
+                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#0cd3ff] hover:text-[#0c66ee] focus:outline-none focus:shadow-outline"
+              >
+                Sign Up</a
+              >
+              <button
+                v-else
+                href="/auth"
+                class="md:px-4 text-sm bg-transparent rounded-lg text-[#0cd3ff] hover:text-[#0c66ee] focus:outline-none focus:shadow-outline"
+                @click="logout"
+              >
+                Logout</button
+              >
+            </li>
+          </client-only>
         </ul>
       </div>
       <client-only>
         <div v-if="!isLoggedIn && notOnLoginPage" class="space-x-3">
-          <base-button
-            class="hidden lg:block px-8 xl:px-10 py-3 mt-2 bg-gradient-to-r from-[#468ef9] to-[#0c66ee] text-white"
-          >
-            <a href="/auth">Sign Up</a>
-          </base-button>
+          <router-link to="/auth">
+            <base-button
+              class="hidden lg:block px-8 xl:px-10 py-3 mt-2 bg-gradient-to-r from-[#468ef9] to-[#0c66ee] text-white"
+            >
+              Sign Up
+            </base-button>
+          </router-link>
         </div>
         <button
           v-if="isLoggedIn && notOnLoginPage"
           class="hidden lg:block bg-transparent rounded-lg text-[#0cd3ff] hover:text-[#0c66ee] focus:outline-none focus:shadow-outline"
           @click="logout"
         >
-          Logout
+          Sign Out
         </button>
       </client-only>
       <!--<div :class="[open ? 'flex' : 'hidden lg:flex']" class=" space-x-3">
- <base-button class="px-8 xl:px-10 py-3 mt-2 bg-inherit text-gradient border border-[#0c66ee]">
+        <base-button class="px-8 xl:px-10 py-3 mt-2 bg-inherit text-gradient border border-[#0c66ee]">
           Login
         </base-button>
         <base-button class="px-8 xl:px-10 py-3 mt-2 bg-gradient-to-r from-[#468ef9] to-[#0c66ee] text-white">
